@@ -21,6 +21,8 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
   - On Windows
     - ...
   - Note: If you are not connected to campus Wi-Fi, you’ll need to log in and start the Cisco AnyConnect VPN before connecting to Keeling
+
+
 - Navigate to where you’d like to build WRF
   - The b drive of your advisor’s server is a good location
   - for example: `data/[your advisor]/b/[your NetID]`
@@ -39,7 +41,9 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 - On Keeling run the following command (in the LIBRARIES directory) for each file address you copy
   - `wget [copied link]`
 - Copy over the file titled makekeelingloads.csh from `data/jtrapp/b/ecwolff3/Public_WRF`
-- Now we need to make one minor edit to this file. To do so, we’ll open it with vi
+  - Navigate to this directory and type: `cp makekeelingloads.csh data/[path to your WRF_4 directory`
+- Move back to your WRF_4 directory
+- Now we need to make one minor edit to *your* copy of this file. To do so, we’ll open it with vi
 - Type: `vi makekeelingloads.csh`
 - Change the path within the file to your directory where WRF is located 
   - for example: `data/jtrapp/b/ecwolff3/WRF4_4/Build_WRF/LIBRARIES`
@@ -48,7 +52,9 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
   - Remember, to edit in vi, you first need to press i
 - Now exit vi (press *escape* then type `:wq` to save and quit)
 - Type: `source makekeelingloads.csh`
-- Next we’ll unpack and install each of the packages we downloaded into our LIBRARIES folder. Copy and run each of the lines of code below:
+
+
+Next we’ll unpack and install each of the packages we downloaded into our LIBRARIES folder. Copy and run each of the lines of code below:
 #### MPICH
 - `tar xzvf mpich-3.0.4.tar.gz` (or just .tar if no .gz present)
 - `cd mpich-3.0.4`
