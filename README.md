@@ -55,7 +55,8 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 
 
 Next we’ll unpack and install each of the packages we downloaded into our LIBRARIES folder. Copy and run each of the lines of code below:
-**MPICH
+**MPICH**
+
 - `tar xzvf mpich-3.0.4.tar.gz` (or just .tar if no .gz present)
 - `cd mpich-3.0.4`
 - `./configure --prefix=$DIR/mpich`
@@ -63,7 +64,8 @@ Next we’ll unpack and install each of the packages we downloaded into our LIBR
 - `make install`
 - `export PATH=$DIR/mpich/bin:$PATH`
 - `cd ..`
-**zlib
+**zlib**
+
 - `tar xzvf zlib-1.2.7.tar.gz (or just .tar if no .gz present)`
 - `cd zlib-1.2.7`
 - `./configure --prefix=$DIR/grib2`
