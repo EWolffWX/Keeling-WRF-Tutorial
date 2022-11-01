@@ -10,8 +10,8 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 
 ## Downloading WRF and WPS (and required libraries)
 
-•	Register as a new WRF user
-o	Go to: https://www2.mmm.ucar.edu/wrf/users/download/wrf-regist.php 
+- Register as a new WRF user
+  - Go to: https://www2.mmm.ucar.edu/wrf/users/download/wrf-regist.php 
 o	Fill out and submit the form
 •	Connect to Keeling
 o	On Mac
