@@ -5,8 +5,15 @@ This tutorial walks through how to download, set up, and run the Weather Researc
 Large portions of this tutorial are adapted from the UCAR WRF online tutorial, available here: https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php
 
 Additional information provided by Seth Goodnight (jamessg3@illinois.edu)
+
 Batch script provided by Steve Nesbitt (snesbitt@illinois.edu)
+
 Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
+
+## Contents
+- [Installing WRF and WPS (and required libraries)](https://github.com/EWolffWX/Keeling-WRF-Tutorial/edit/main/README.md#installing-wrf-and-wps-and-required-libraries)
+- [Configure and Compile WRF](https://github.com/EWolffWX/Keeling-WRF-Tutorial/edit/main/README.md#configure-and-compile-wrf)
+- [Configure and Compile WPS](https://github.com/EWolffWX/Keeling-WRF-Tutorial/edit/main/README.md#configure-and-compile-wps)
 
 ## Installing WRF and WPS (and required libraries)
 
