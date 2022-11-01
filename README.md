@@ -23,12 +23,12 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
   - Note: If you are not connected to campus Wi-Fi, you’ll need to log in and start the Cisco AnyConnect VPN before connecting to Keeling
 - Navigate to where you’d like to build WRF
   - The b drive of your advisor’s server is a good location
-  - for example: 'data/[your advisor]/b/[your NetID]'
-- Create a directory called WRF4_4 (type: 'mkdir WRF4_4')
+  - for example: `data/[your advisor]/b/[your NetID]`
+- Create a directory called WRF4_4 (type: `mkdir WRF4_4`)
 - Next, we’ll download both WRF and WPS
   - WPS is the WRF Preprocessing System and is necessary for converting our input files into the format required by WRF
 - Within this directory, type:
-  - 'git clone –recurse-submodules http://github.com/wrf-model/WRF'
+  - `git clone –recurse-submodules http://github.com/wrf-model/WRF`
   - 'git clone http://github.com/wrf-model/WPS'
 - **It’s important to download this way and not from the WRF site which hasn’t been updated since 2018 and only goes up to version 4.0, not 4.4**
 - Within the folder containing WRF and WPS, make a directory called 'Build_WRF' and a directory within this called 'LIBRARIES'
