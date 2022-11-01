@@ -8,12 +8,12 @@ Additional information provided by Seth Goodnight (jamessg3@illinois.edu)
 Batch script provided by Steve Nesbitt (snesbitt@illinois.edu)
 Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 
-## Downloading WRF and WPS (and required libraries)
+## Installing WRF and WPS (and required libraries)
 
-- Register as a new WRF user
+#### Register as a new WRF user
   - Go to: https://www2.mmm.ucar.edu/wrf/users/download/wrf-regist.php 
   - Fill out and submit the form
-- Connect to Keeling
+#### Connect to Keeling
   - On Mac
     - Open a terminal
     - Type ssh [your NetID]@keeling.earth.illinois.edu
@@ -21,8 +21,7 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
   - On Windows
     - ...
   - Note: If you are not connected to campus Wi-Fi, you’ll need to log in and start the Cisco AnyConnect VPN before connecting to Keeling
-
-
+#### Downloading WRF and WPS
 - Navigate to where you’d like to build WRF
   - The b drive of your advisor’s server is a good location
   - for example: `data/[your advisor]/b/[your NetID]`
@@ -34,6 +33,7 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
   - `git clone http://github.com/wrf-model/WPS`
 - **It’s important to download this way and not from the WRF site which hasn’t been updated since 2018 and only goes up to version 4.0, not 4.4**
 - Within the folder containing WRF and WPS, make a directory called *Build_WRF* and a directory within this called *LIBRARIES*
+#### Downloading Additional Libraries
 - Go to: http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php#STEP2
 - Copy the link for each of the following files (right click and select copy link):
   - mpich, Jasper, libpng, and zlib
@@ -70,6 +70,24 @@ Next we’ll unpack and install each of the packages we downloaded into our LIBR
 
 - `tar xzvf zlib-1.2.7.tar.gz (or just .tar if no .gz present)`
 - `cd zlib-1.2.7`
+- `./configure --prefix=$DIR/grib2`
+- `make`
+- `make install`
+- `cd ..`
+
+**libpng**
+
+- `tar xzvf libpng-1.2.50.tar.gz` (or just .tar if no .gz present)
+- `cd libpng-1.2.50`
+- `./configure --prefix=$DIR/grib2`
+- `make`
+- `make install`
+- `cd ..`
+
+**Jasper**
+
+- `tar xzvf jasper-1.900.1.tar.gz` (or just .tar if no .gz present)
+- `cd jasper-1.900.1`
 - `./configure --prefix=$DIR/grib2`
 - `make`
 - `make install`
