@@ -108,6 +108,6 @@ Next we’ll unpack and install each of the packages we downloaded into our LIBR
     - It’s very common to run into issues at this step, don’t be discouraged!
     - If you need help troubleshooting, see Appendix I and/or reach out to other students who use WRF for their research
     - 
-***NOTE: Anything before these steps only needs to be completed one time, when you set up WRF. For future simulations, simply start at the next step.***
+***NOTE: Anything before this point only needs to be completed one time, when you set up WRF. For future simulations, simply start at the next step.***
 
 ## Configure and Compile WPS
