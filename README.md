@@ -114,7 +114,80 @@ Next we’ll unpack and install each of the packages we downloaded into our LIBR
     - If this step fails to create executable files in your WRF folder (such as wrf.exe) there may be an issue with the libraries. You’ll need to go back to troubleshoot then re-compile WRF before continuing
     - It’s very common to run into issues at this step, don’t be discouraged!
     - If you need help troubleshooting, see Appendix I and/or reach out to other students who use WRF for their research
-    - 
+    - ...
 ***NOTE: Anything before this point only needs to be completed one time, when you set up WRF. For future simulations, simply start at the next step.***
 
 ## Configure and Compile WPS
+- Move to the WPS folder (from the WRF folder, you can type: `cd ../WPS`)
+- Just as with WRF, we should start by cleaning WPS (in the future, be sure to copy and move any files you want to save first)
+  - `./clean -a`
+- Now we can configure WPS
+  - `./configure`
+    - Select option 17 when prompted
+- And compile WPS
+  - `./compile >& log.compile`
+- Now we need to give WPS information about our run and the data we’ll be using
+- Let’s open our namelist and make some edits
+  - Type: `vi namelist.wps`
+- The following suggestions for editing your namelist are adapted from this UCAR site: https://www2.mmm.ucar.edu/wrf/users/namelist_best_prac_wps.html 
+- ...
+
+## Getting Data
+- First, navigate to your WRF4_4 folder (from the WPS folder type: `cd ..`)
+- Make a new directory titled DATA (type: `mkdir DATA`)
+
+To download and use NAM or GFS data follow this section (*For information on how to run WRF with HRRR input files, see Appendix II*)
+- For NAM data, follow this link: https://rda.ucar.edu/datasets/ds609.0/#!access 
+- For GFS data, follow this link: https://rda.ucar.edu/datasets/ds084.6/#!access 
+- In order to download data, you’ll have to make an account with RDA
+  - Click sign in on the top left of the webpage and follow the instructions to register as a new user
+- Once you’ve registered, return to the NAM or GFS data page
+- Click on the link for “Web File Listing” below “Web Server Holdings”
+- Select the right-hand column: “Complete File List”
+- Navigate to the files you need by picking the year then month of your model run
+- Remember, you’ll need every file that occurs during your model run
+  - For example: If you’re running WRF for 4/5/22 00Z – 4/6/22 00Z, you’ll need to download 5 NAM files (4/5 00Z, 06Z, 12Z, 18Z, 4/6 00Z)
+- The easiest way to retrieve these files is to download them to your local machine then transfer them to Keeling
+- To do this, simply click on each file name you need
+- After a few moments, they should be downloaded
+- Now, open a new terminal window (Mac) or ...
+- Within the terminal, navigate to your downloads folder
+- Now we’ll move these files from your local machine to your new WRF DATA directory
+- Type: `scp [filename] [your Net ID]@keeling.earth.illinois.edu:/data/[path to new location on Keeling]/.`
+- The files should now appear in you DATA directory
+
+## Run WPS
+- Return to your WPS directory
+- `./geogrid.exe`
+- Link our input data
+  - `./link_grib.csh [path to data files]`
+    - for example: `./link_grib.csh ../DATA`
+- Link to the correct Vtable (depends on which model you are using for your input data NAM, GFS, or HRRR)
+  - `ln -sf ungrib/Variable_Tables/Vtable.NAM Vtable` (for use with the NAM)
+  - `ln -sf ungrib/Variable_Tables/Vtable.GFS Vtable` (for use with the GFS)
+  - *Note: there is no pre-downloaded Vtable for the HRRR, but one is available from the University of Utah’s website (same location as where HRRR data is archived). More information is located in Appendix II*
+- Now we ungrib our files
+  - `./ungrib.exe`
+  - *Note: If you have any files other than your input data files in the folder you linked to above, you will receive an error when trying to run ungrib. Remove any other files and try again.
+- There should now a list of files with the prefix “FILE” in your directory
+- Run metgrid
+  - `./metgrid.exe`
+- Now there should be a list of files with the prefix “met_em” in the WPS directory
+
+##  Running WRF
+- Navigate to where we’ll be running WRF
+  - `cd ../WRF/test/em_real`
+- Now we need to give WRF information about our run
+- `vi namelist.input`
+- …
+- Link our met_em files to WRF
+  - `ln -sf ../../../WPS/met_em.d0*.`
+- We’re now ready to run WRF! There are a number of ways to actually accomplish this…
+### Using a basic qlogin
+- Type: qlogin -p node -n 16 -mem 128G
+  - This allots 16 processors and 128 Gb of memory to this process
+- Type: `mpirun -np 16 ./real.exe`
+- Type: `mpirun -np 16 ./wrf.exe`
+- This is an easy way to run WRF, but requires that your computer stays on and connected to Keeling for the entire process which isn’t ideal
+- Instead, let’s use a batch script…
+## Using a batch script
