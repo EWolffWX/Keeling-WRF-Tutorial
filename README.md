@@ -14,6 +14,9 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 - [Installing WRF and WPS (and required libraries)](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#installing-wrf-and-wps-and-required-libraries)
 - [Configure and Compile WRF](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#configure-and-compile-wrf)
 - [Configure and Compile WPS](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#configure-and-compile-wps)
+- [Getting Data](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#getting-data)
+- [Run WPS](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#run-wps)
+- [Run WRF](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#running-wrf)
 
 ## Installing WRF and WPS (and required libraries)
 
@@ -174,7 +177,7 @@ To download and use NAM or GFS data follow this section (*For information on how
   - `./metgrid.exe`
 - Now there should be a list of files with the prefix “met_em” in the WPS directory
 
-##  Running WRF
+##  Run WRF
 - Navigate to where we’ll be running WRF
   - `cd ../WRF/test/em_real`
 - Now we need to give WRF information about our run
