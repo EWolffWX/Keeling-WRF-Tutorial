@@ -16,7 +16,7 @@ Tutorial compiled by Eddie Wolff (ecwolff3@illinois.edu)
 - [Configure and Compile WPS](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#configure-and-compile-wps)
 - [Getting Data](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#getting-data)
 - [Run WPS](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#run-wps)
-- [Run WRF](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#running-wrf)
+- [Run WRF](https://github.com/EWolffWX/Keeling-WRF-Tutorial/blob/main/README.md#run-wrf)
 
 ## Installing WRF and WPS (and required libraries)
 
