@@ -190,4 +190,4 @@ To download and use NAM or GFS data follow this section (*For information on how
 - Type: `mpirun -np 16 ./wrf.exe`
 - This is an easy way to run WRF, but requires that your computer stays on and connected to Keeling for the entire process which isn’t ideal
 - Instead, let’s use a batch script…
-## Using a batch script
+### Using a batch script
